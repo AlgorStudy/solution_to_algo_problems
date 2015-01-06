@@ -2,4 +2,5 @@ solution_to_algo_problems
 =========================
 
 SolutionToAlgoProblems
-test
+
+algorithm study for developing technique
