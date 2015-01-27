@@ -19,7 +19,7 @@ public class HeapSorting {
 		Random random = new Random(43);
 		int[] array = new int[size];
 		for(int i = 0; i < size ; ++i ){
-			array[i] = random.nextInt( size * 2);
+			array[i] = random.nextInt(size * 2);
 		}
 		return array;
 	}
