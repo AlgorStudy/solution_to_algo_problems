@@ -86,8 +86,12 @@ class Percolation {
 
 		matrix[i][j] = OPENED;
 		/*
-		 * matrix[i-1][j] | matrix[i][j] - matrix[i][j] - matrix[i][j+1] |
-		 * matrix[i+1][j] 좌우 상하 site를 확인하고 열려있으면 연결
+		 *                  matrix[i-1][j]
+		 *                        | 
+		 *   matrix[i][j-1] - matrix[i][j] - matrix[i][j+1]
+		 *                        |
+		 *                  matrix[i+1][j]
+	     *   check surrounding sites and connect if one of them is opened
 		 */
 		if (i < (matrixSize - 1) && matrix[i + 1][j]) {
 			weightedUnionFinder.union(generateUniqueId(i, j),
