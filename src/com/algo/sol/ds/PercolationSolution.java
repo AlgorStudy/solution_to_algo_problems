@@ -122,8 +122,8 @@ class Percolation {
 	}
 }
 
-/**
- * 알고리즘 수업에 사용된 자료구조 활용 The <tt>WeightedQuickUnionUF</tt> class represents a
+/**  
+ * The <tt>WeightedQuickUnionUF</tt> class represents a
  * union-find data structure. It supports the <em>union</em> and <em>find</em>
  * operations, along with methods for determinig whether two objects are in the
  * same component and the total number of components.
