@@ -9,7 +9,7 @@ public class PrimeNumber10001st {
 		long len = primeNumbers.length;
 		for(int i = 0 ; i < len ; ){			
 			boolean isPrime = true;
-			for(int j = 0 ; j <= i ; ++j){
+			for(int j = 0 ; j <= i && primeNumbers[j] <= (long)Math.sqrt(targetNumber) ; ++j){
 				isPrime &= (targetNumber % primeNumbers[j] !=0);
 				if(!isPrime){
 					break;
