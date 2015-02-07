@@ -1,4 +1,4 @@
-package com.algo.sol.ds;
+package com.alds.ds.sol;
 
 import java.util.Random;
 

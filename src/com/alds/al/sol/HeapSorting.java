@@ -1,4 +1,4 @@
-package com.algo.sol.sorting;
+package com.alds.al.sol;
 
 import java.util.Arrays;
 import java.util.Random;
