@@ -8,7 +8,7 @@ public class HeapSorting {
 		int[] inputArray = genRandomIntArray(100);
 		// 정렬 전 
 		displayArray(inputArray);
-		
+		 
 		Heap heap = new Heap(inputArray);
 		heap.heapSort();
 		
