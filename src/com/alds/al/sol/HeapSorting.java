@@ -31,6 +31,11 @@ public class HeapSorting {
 	}
 }
 // 알고리즘은 introduction to algorothms를 참고
+/**
+ * Data Structure : Heap
+ * @author USER
+ *
+ */
 class Heap{
 	private int[] heapArray;
 	int[] getHeapArray(){
