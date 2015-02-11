@@ -10,10 +10,10 @@ public class PrimeNumber10001st {
 		long startTime = System.currentTimeMillis();
 		for(int i = 0 ; i < len ; ){			
 			boolean isPrime = true;
-			for(int j = 0 ; j <= i// 지금까지 확인된 소수로 나누는데
-					// 12의 예에서 보듯이 1,2,3,4,6,12 일 때 3으로 나누어 떨어진다는 의미는 4로도 나누어 떨어진다는 의미이므로
-					// root값이하 까지의 소수로만 나누어서 떨어지는지만 확인해도 무방하다.
-					&& primeNumbers[j] <= (long)Math.sqrt(targetNumber)	; ++j){
+			// 지금까지 확인된 소수로 나누는데
+			// 12의 예에서 보듯이 1,2,3,4,6,12 일 때 3으로 나누어 떨어진다는 의미는 4로도 나누어 떨어진다는 의미이므로
+			// root값이하 까지의 소수로만 나누어서 떨어지는지만 확인해도 무방하다.
+			for(int j = 0 ; j <= i && primeNumbers[j] <= (long)Math.sqrt(targetNumber)	; ++j){
 				isPrime &= (targetNumber % primeNumbers[j] !=0);
 				if(!isPrime){
 					break;
