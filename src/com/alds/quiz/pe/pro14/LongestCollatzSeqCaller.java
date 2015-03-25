@@ -9,16 +9,15 @@ public class LongestCollatzSeqCaller {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		long startTime = System.currentTimeMillis();
 		LongestCollatzSeqNum lcs = new LongestCollatzSeqNum(1000000);
+		long startTime = System.currentTimeMillis();
 		lcs.executeLongestCollatzSeqNum();
 		System.out.printf("Elapsed Time : %4d ms\n", System.currentTimeMillis()	- startTime);
 	}
 
 }
-
 class LongestCollatzSeqNum {
-	private final Map<Long, Long> cache;// <K:producer number, V:number of Collatz Chain>
+	private final Map<Long, Long> cache;//<K:producer number, V:number of Collatz Chain>
 	private final int size;
 
 	LongestCollatzSeqNum(int size) {
@@ -29,7 +28,6 @@ class LongestCollatzSeqNum {
 	void executeLongestCollatzSeqNum() {
 		long longestChainSeqProducer = 1l;
 		long longestChainSeqNum = 1l;
-
 		for (int i = 1; i < size; ++i) {
 			long temp = getCollatzChainNumber(i);
 			if (temp > longestChainSeqNum) {
@@ -49,7 +47,7 @@ class LongestCollatzSeqNum {
 				if (copyOfParam % 2 == 0) {
 					copyOfParam = copyOfParam / 2;
 				} else {
-					copyOfParam = (3 * copyOfParam + 1) / 2;// (odd * odd + 1) is obviously even, so it can be divided by 2.
+					copyOfParam = (3 * copyOfParam + 1) / 2; // (odd * odd + 1) is obviously even, so it can be divided by 2.
 				}
 				count++;
 			} else {

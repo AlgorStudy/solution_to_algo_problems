@@ -1,4 +1,4 @@
-package com.alds.quiz.num2;
+package com.alds.quiz.fix;
 
 import java.io.BufferedReader;
 import java.io.IOException;
