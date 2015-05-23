@@ -50,7 +50,9 @@ class MinimunSectionFinder{
 		public int compare(Element o1, Element o2) {
 			// TODO Auto-generated method stub			 
 			// 값이 같으면 리스트 아이디 기준 정렬
-			return o1.getValue() - o2.getValue() != 0 ? o1.getValue() - o2.getValue() : o1.getListId() - o2.getListId();
+			int valueCompare = o1.getValue() - o2.getValue();
+			int idCompare = o1.getListId() - o2.getListId();
+			return valueCompare != 0 ? valueCompare : idCompare;
 		}		
 	};
 	private final int listCount;
