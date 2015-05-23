@@ -76,13 +76,13 @@ class MinimunSectionFinder{
 				listIdSet.add(mergedList.get(j).getListId());
 			}
 			if(listIdSet.size() == listCount){
-				int tempEndPint = i+listCount-1, tempStartPoint = i;
-				int sectionSize = mergedList.get(tempEndPint).getValue() - mergedList.get(tempStartPoint).getValue();
+				int tempEndPoint = i+listCount-1, tempStartPoint = i;
+				int sectionSize = mergedList.get(tempEndPoint).getValue() - mergedList.get(tempStartPoint).getValue();
 				
 				if(sectionSize < minSectionSize){
 					minSectionSize = sectionSize;
 					minSectionStartIndex = tempStartPoint;
-					minSectionEndIndex = tempEndPint;
+					minSectionEndIndex = tempEndPoint;
 				}
 			}
 			listIdSet.clear();
