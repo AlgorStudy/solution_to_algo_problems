@@ -55,10 +55,12 @@ class MinimunSectionFinder{
 			return valueCompare != 0 ? valueCompare : idCompare;
 		}		
 	};
+	
 	private final int listCount;
 	private final List<Element> mergedList;
 	private int minSectionStartIndex, minSectionEndIndex;
 	private int minSectionSize;
+	
 	MinimunSectionFinder(int listCount){
 		this.listCount = listCount;
 		mergedList = new ArrayList<Element>(listCount*10);
