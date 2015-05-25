@@ -73,7 +73,7 @@ class MinimunSectionFinder{
 		Collections.sort(mergedList, ELEMENT_COMP);
 		Set<Integer> listIdSet = new HashSet<Integer>();
 		int size = mergedList.size();
-		for(int i = 0; ( i + listCount ) < size ; ++i){
+		for(int i = 0; ( i + listCount ) <= size ; ++i){
 			for(int j = i ; j < ( i + listCount ) ; ++j){
 				listIdSet.add(mergedList.get(j).getListId());
 			}
@@ -89,7 +89,9 @@ class MinimunSectionFinder{
 			}
 			listIdSet.clear();
 		}
-		System.out.println(mergedList.get(minSectionStartIndex).getValue()+", "+mergedList.get(minSectionEndIndex).getValue());
+		if(minSectionStartIndex >=0 && minSectionEndIndex >=0){
+			System.out.println(mergedList.get(minSectionStartIndex).getValue()+", "+mergedList.get(minSectionEndIndex).getValue());
+		}
 	}
 }
 class Element{
