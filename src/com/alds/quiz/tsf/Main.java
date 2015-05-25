@@ -1,4 +1,4 @@
-package com.alds.quiz.ts;
+package com.alds.quiz.tsf;
 
 import java.io.BufferedReader;
 import java.io.IOException;
