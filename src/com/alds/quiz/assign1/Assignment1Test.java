@@ -35,4 +35,12 @@ public class Assignment1Test {
 		}
 		return water[kth-1] >  c ? c : water[kth-1];
 	}
+	
+	
+	@Test
+	public void testFindMaxCupSeq() {
+		CupPyramid cupPyramid = new CupPyramid(10);
+		cupPyramid.pourWaterIntoCupPyramid(6);
+		System.out.println(cupPyramid.findMaxCupSequence());
+	}
 }
