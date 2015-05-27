@@ -51,7 +51,7 @@ class CupPyramid {
 	}
 	
 	/**
-	 * 피라미드 형태로 쌓은 컵의 가장 상단에 물을 붓는 연산
+	 * 피라미드 형태로 쌓은 컵의 가장 상단에 물을 붓는 동작
 	 * @param liter 부으려는 물의 양
 	 */
 	void pourWaterIntoCupPyramid(double liter){
