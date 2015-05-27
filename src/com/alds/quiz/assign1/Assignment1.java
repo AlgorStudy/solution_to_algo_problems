@@ -31,7 +31,7 @@ class CupPyramid {
 	private final double cupCapa;// 컵이 들고 있을 수 있는 최대 물의 양
 	CupPyramid(int cupCount){
 		this.cupCount = cupCount;
-		this.cupCapa = 1;
+		this.cupCapa = 1.0;
 		this.layers = new double[cupCount]; 
 		this.waterMount = new double[cupCount];
 	}
