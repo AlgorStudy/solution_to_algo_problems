@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class Assignment2 {
 	private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	private static final String DELIMITER = " ";
+	private static final String DELIMITER = " ";// 입력값 구분자
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 		try{
@@ -33,8 +33,12 @@ public class Assignment2 {
 	private static List<Element> getListFromInput(final int listId) throws IOException{
 		String intgerListInStr = br.readLine();
 		String[] tokens = intgerListInStr.split(DELIMITER);
-		List<Element> tempList = new ArrayList<Element>(tokens.length);
-		for(String temp :tokens){
+		Set<String> dupFilter = new HashSet<String>();
+		for(String temp : tokens){
+			dupFilter.add(temp);// 중복 값을 제거
+		}
+		List<Element> tempList = new ArrayList<Element>(dupFilter.size());
+		for(String temp : dupFilter){
 			Element element = new Element(Integer.parseInt(temp), listId);
 			tempList.add(element);
 		}
@@ -45,6 +49,9 @@ public class Assignment2 {
 	}
 }
 class MinimunSectionFinder{
+	/**
+	 * 리스트들을 합친 후 정렬하는 기준을 제공하는 인스턴스
+	 */
 	private static final Comparator<Element> ELEMENT_COMP = new Comparator<Element>(){
 		@Override
 		public int compare(Element o1, Element o2) {
@@ -56,10 +63,10 @@ class MinimunSectionFinder{
 		}		
 	};
 	
-	private final int listCount;
-	private final List<Element> mergedList;
-	private int minSectionStartIndex, minSectionEndIndex;
-	private int minSectionSize;
+	private final int listCount;// 입력된 리스트의 갯수(k)
+	private final List<Element> mergedList;// 입력된 리스트를 하나로 저장할 인스턴스 
+	private int minSectionStartIndex, minSectionEndIndex;// 최단 구간의 시작 인덱스, 종료인덱스
+	private int minSectionSize;// 최단 구간의 길이
 	
 	MinimunSectionFinder(int listCount){
 		this.listCount = listCount;
@@ -68,22 +75,29 @@ class MinimunSectionFinder{
 		minSectionEndIndex = -1;
 		minSectionSize = Integer.MAX_VALUE;
 	}
+	/**
+	 * 입력된 리스트를 하나의 인스턴스로 합침
+	 * @param newList 사용자 입력한 리스트
+	 */
 	void addList(List<Element> newList){
 		mergedList.addAll(newList);
 	}
+	/**
+	 * 각 리스트의 원소를 적어도 하나씩 포함하는 최단 길이 구간 시작 값과 종료값 출력
+	 */
 	void findMinimumSection(){
 		Collections.sort(mergedList, ELEMENT_COMP);
 		Set<Integer> listIdSet = new HashSet<Integer>();
 		int size = mergedList.size();
 		for(int i = 0; ( i + listCount ) <= size ; ++i){
 			for(int j = i ; j < ( i + listCount ) ; ++j){
-				listIdSet.add(mergedList.get(j).getListId());
+				listIdSet.add(mergedList.get(j).getListId());//검색 대상 구간의 리스트 아이디를 중복을 제거해서 Set에 저장 
 			}
-			if(listIdSet.size() == listCount){
+			if(listIdSet.size() == listCount){// 모든 리스트 아이디가 들어왔다면
 				int tempEndPoint = i+listCount-1, tempStartPoint = i;
 				int sectionSize = mergedList.get(tempEndPoint).getValue() - mergedList.get(tempStartPoint).getValue();
 				
-				if(sectionSize < minSectionSize){
+				if(sectionSize < minSectionSize){// 구간 길이가 더 작은 새로운 구간이 발견되면 저장
 					minSectionSize = sectionSize;
 					minSectionStartIndex = tempStartPoint;
 					minSectionEndIndex = tempEndPoint;
@@ -91,11 +105,15 @@ class MinimunSectionFinder{
 			}
 			listIdSet.clear();
 		}
-		if(minSectionStartIndex >=0 && minSectionEndIndex >=0){
+		if(minSectionStartIndex >=0 && minSectionEndIndex >=0){// 최소구간을 찾은 경우에만 출력
 			System.out.println(mergedList.get(minSectionStartIndex).getValue()+", "+mergedList.get(minSectionEndIndex).getValue());
 		}
 	}
 }
+/**
+ * 원소는 value와 속한 리스트의 아이디로 구성 
+ *
+ */
 class Element{
 	private final int value;
 	private final int listId;
