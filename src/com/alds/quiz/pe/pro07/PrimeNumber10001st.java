@@ -1,4 +1,4 @@
-package com.alds.quiz.num1;
+package com.alds.quiz.pe.pro07;
 
 public class PrimeNumber10001st {
 	public static void main(String[] args){

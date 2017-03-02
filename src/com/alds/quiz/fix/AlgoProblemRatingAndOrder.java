@@ -1,4 +1,4 @@
-package com.alds.quiz.num2;
+package com.alds.quiz.fix;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,7 +32,6 @@ public class AlgoProblemRatingAndOrder {
 	}
 
 }
-
 class InputProcessor {
 	private static final BufferedReader br = new BufferedReader(
 			new InputStreamReader(System.in));
@@ -131,7 +130,6 @@ class InputProcessor {
 		br.close();
 	}
 }
-
 class AlgoProblem {
 	private int rating;
 	private int proNum;
