@@ -17,7 +17,7 @@ public class Lesson2ProgrammingAssignmentTest {
 
 	@Test
 	public void testWholeDataSort() {
-		try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\USER\\Dropbox\\MOOC\\IntegerArray.txt"))){
+		try(BufferedReader br = new BufferedReader(new FileReader("D:\\dropbox\\Dropbox\\MOOC\\IntegerArray.txt"))){
 			int[] intArray = new int[100000];
 			int i = 0;
 			for(String intInString = br.readLine(); intInString != null ; intInString = br.readLine(), i++) {
