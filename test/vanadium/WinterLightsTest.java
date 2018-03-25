@@ -81,7 +81,7 @@ public class WinterLightsTest {
 				isPalindrome &= ((value % 2) == 0);
 			}
 		}
-		return Boolean.TRUE;
+		return isPalindrome;
 	}
 
 	private int countPalindromeSubsequence(String s) {
